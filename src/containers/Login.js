@@ -28,7 +28,6 @@ class login extends React.Component{
                     />
                 </View>
                 
-                <View style/>
                 <Button containerStyle={styles.Button}
                 title="Ingresa"
                 type="outline"
