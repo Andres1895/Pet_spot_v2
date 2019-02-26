@@ -1,21 +1,18 @@
-import React, {Component} from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {Platform,AppRegistry, StyleSheet, Text, View, TouchableOpacity, Scr} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-class login extends React.Component{
-    state={
+class Login extends React.Component{
+    state = { 
         errorMesagge:'',
         userName: '',
         password:''
     }
 
-    verifyFields=()=>{
+    verifyFields = () => {
         const {userName, password} = this.state;
-
-
         const { goBack }=this.props.navigation;
+
         if(userName!== '' && password!=='' )
         {
             if (userName ==  'Andres' && password == '1234')
@@ -36,7 +33,6 @@ class login extends React.Component{
         }
     }
     render(){
-        const { goBack }=this.props.navigation;
         return(
             <View style={styles.container}>
                 <View style={styles.title}>
@@ -74,22 +70,22 @@ class login extends React.Component{
         )
     }
 }
-export default login;
+export default Login;
 
 const styles = StyleSheet.create({
     container:{
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-   },
-   title: {
-    fontSize: 30,
-    textAlign: 'center',
-    paddingTop: 60
-  },
-  Inform:{
-    paddingBottom: 15
-  }
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'stretch',
+    },
+    title: {
+        fontSize: 30,
+        textAlign: 'center',
+        paddingTop: 60
+    },
+    Inform:{
+        paddingBottom: 15
+    }
 
  })

@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {Platform,AppRegistry, StyleSheet, Text, View, TouchableOpacity, ScrollView, TextInput} from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Home from './Home';
-//import t from 'tcomb-form-native';
 
 
 class SignUp extends React.Component{
-    state={
+    state = {
         errorMessage: '',
         userName: '',
         email:'',
@@ -16,7 +12,7 @@ class SignUp extends React.Component{
         verifypassword:''   
     }
 
-    verifyFields=()=>{
+    verifyFields = () => {
         const {password, verifypassword, userName, email} = this.state;
         const { goBack }=this.props.navigation;
 
@@ -106,9 +102,7 @@ class SignUp extends React.Component{
     }
 }
 
-
-
-  export default SignUp;
+export default SignUp;
 
  const styles = StyleSheet.create({
     container:{

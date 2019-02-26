@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import { View, Text } from 'react-native';
 import Colors from '../helpers/colors';
 
-class Home extends React.Component{
+class Account extends React.Component{
     render(){
         return(
             <View style={{backgroundColor: Colors.white, flex: 1}}>
-                <Text style={{backgroundColor: Colors.white}}>Home</Text>
+                <Text>Account</Text> 
             </View>
         );
     }
 }
 
-export default Home;
+export default Account;
