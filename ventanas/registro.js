@@ -54,8 +54,8 @@ class registro extends React.Component{
         )
     }
 }
-
-  export default registro;
+  
+export default registro;
 
  const styles = StyleSheet.create({
     container:{
