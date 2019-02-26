@@ -10,7 +10,7 @@ import TabNav from './src/containers/TabNavigator';
 
 class App extends React.Component {
     state = {
-        loggedIn: false
+        loggedIn: true
     }
     render() {
         if (this.state.loggedIn) {
