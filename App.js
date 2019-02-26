@@ -4,30 +4,39 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button } from 'react-native-elements';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import registro from './ventanas/registro';
+import login from './ventanas/Login';
 
  class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.title}>Bienvenido a Pet Spot</Text>
-      <Button 
-          style={styles.boton}
-          title="Inicia Sesión"
-          type="outline"
-        />
-      <Button 
-          style={styles.boton}
-          title="Registrate"
-          type="outline"
-          onPress={() => this.props.navigation.navigate('Registro')}
-      />
+        <View  style={styles.title}>
+          <Text style={{fontSize: 30, textAlign: 'center', paddingBottom: 20}}>Bienvenido a Pet Spot</Text>
+        </View>
+        <View>
+          <Button 
+            containerStyle={styles.boton}
+            title="Inicia Sesión"
+            type="outline"
+            onPress={()=> this.props.navigation.navigate('Login')}
+          />
+        </View>
+        <View>
+          <Button 
+            containerStyle={styles.boton}
+            title="Registrate"
+            type="outline"
+            onPress={() => this.props.navigation.navigate('Registro')}
+           />
+        </View>
     </View>
     );
   }
 }
 const registerStack = createStackNavigator({
   Inicio: App,
-  Registro: registro
+  Registro: registro,
+  Login: login
 });
 
 export default createAppContainer(registerStack);
@@ -41,15 +50,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   title: {
-    fontSize: 35,
+    fontSize: 30,
     textAlign: 'center',
-    margin: 10,
-
+    paddingTop: 60
   },
   boton:{
-    color: '#ddd',
-    width: '40%',
     height: 40,
+    marginTop: 20,
   },
   buttonContainer: {
     flex: 1,
