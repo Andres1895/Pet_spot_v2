@@ -1,77 +1,85 @@
 import React, {Component} from 'react';
-import {Platform,AppRegistry, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button } from 'react-native-elements';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import registro from './ventanas/registro';
-import login from './ventanas/Login';
-
- class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View  style={styles.title}>
-          <Text style={{fontSize: 30, textAlign: 'center', paddingBottom: 20}}>Bienvenido a Pet Spot</Text>
-        </View>
-        <View>
-          <Button 
-            containerStyle={styles.boton}
-            title="Inicia Sesión"
-            type="outline"
-            onPress={()=> this.props.navigation.navigate('Login')}
-          />
-        </View>
-        <View>
-          <Button 
-            containerStyle={styles.boton}
-            title="Registrate"
-            type="outline"
-            onPress={() => this.props.navigation.navigate('Registro')}
-           />
-        </View>
-    </View>
-    );
-  }
+import SignUp from './src/containers/SignUp';
+import Login from './src/containers/Login';
+import Colors from './src/helpers/colors';
+class App extends React.Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <View style={styles.image}>
+                    <Image style={{width: 150, height: 150}} source= {require('./src/images/Icono.png')}/>
+                </View>
+                <View  style={styles.title}>
+                    <Text style={{fontSize: 30,  paddingTop: 20, paddingLeft: 10, color: Colors.white}}>Bienvenido a Pet Spot</Text>
+                </View>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                    <Button 
+                        titleStyle={{fontSize: 19}}
+                        containerStyle={styles.button}
+                        buttonStyle={{borderRadius: 50}}
+                        title="Inicia Sesión"
+                        onPress={()=> this.props.navigation.navigate('Login')}
+                    />
+                    <Button 
+                        titleStyle={{fontSize: 19}}
+                        containerStyle={{width: '80%', borderColor: Colors.secondaryBlue, borderStyle: 'solid'}}
+                        buttonStyle={{borderRadius: 50, backgroundColor: 'transparent'}}
+                        title="Registrate"
+                        onPress={() => this.props.navigation.navigate('SignUp')}
+                        type="outline"
+                    />
+                </View>
+                <View>
+                    <Text style={styles.footer}>
+                        Powered by Digital Class
+                    </Text>
+                </View>
+            </View>
+        );
+    }
 }
+
 const registerStack = createStackNavigator({
-  Inicio: App,
-  Registro: registro,
-  Login: login
+  Inicio:{
+      screen: App,
+      navigationOptions: {header: null}
+  }, 
+  SignUp: SignUp,
+  Login: Login
 });
 
 export default createAppContainer(registerStack);
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    backgroundColor: Colors.primaryBlue,
   },
   title: {
-    fontSize: 30,
-    textAlign: 'center',
-    paddingTop: 60
+    textAlign: 'left'
   },
-  boton:{
+  button:{
     height: 40,
-    marginTop: 20,
+    marginBottom: 20,
+    width: '80%',
+    borderRadius:10,
+
   },
-  buttonContainer: {
-    flex: 1,
-},
-  texto: {
-    fontFamily: 'Arial',
-    fontSize: 15,
-    textAlign: 'center',
-    margin: 10,
+  image: {
+    textAlign: 'left',
+    paddingTop: 10
   },
-  in: {
-    alignItems: 'center',
-  },
-  icono: {
-    color: "#4267b2",
-    margin: 10,
-  },
+  footer: {
+    color: Colors.white,
+    minHeight: '5%',
+    fontSize: 16,
+    textAlign: 'center'
+  }
 });
