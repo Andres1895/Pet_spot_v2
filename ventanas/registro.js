@@ -1,4 +1,4 @@
-import React, {Component} from 'react-native';
+import React, {Component} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform,AppRegistry, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { Button, Input } from 'react-native-elements';
@@ -34,13 +34,8 @@ class registro extends React.Component{
         )
     }
 }
-
-
-const BodyStack = createStackNavigator({
-    Registro: registro
-  });
   
-  export default createAppContainer(BodyStack);
+export default registro;
 
  const styles = StyleSheet.create({
     container:{
