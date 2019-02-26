@@ -106,13 +106,7 @@ class SignUp extends React.Component{
     }
 }
 
-<<<<<<< HEAD
 export default SignUp;
-=======
-
-
-  export default SignUp;
->>>>>>> dev
 
  const styles = StyleSheet.create({
     container:{
