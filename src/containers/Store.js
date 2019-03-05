@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import { View, Text, Linking, TouchableOpacity, StyleSheet } from 'react-native';
 import Colors from '../helpers/colors';
-import { Button } from 'react-native-elements';
+import { Button, Header } from 'react-native-elements';
+
 
 class Store extends React.Component{
     render(){
         return(
             <View style={styles.container}>
+                <Header
+                    backgroundColor={Colors.primaryBlue}
+                    placement="center"
+                    centerComponent={{ text: 'Tienda en línea', style: { color: '#fff', fontSize:20 } }}
+                />
                 <View style={[styles.boxContainer, styles.contText]}>
                      <Text style={styles.contText}>¿Buscas accesorios para tu mascota?</Text>
                 </View>

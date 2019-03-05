@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import { View, Text } from 'react-native';
 import Colors from '../helpers/colors';
+import { Header, Button } from 'react-native-elements';
 
 class Home extends React.Component{
     render(){
         return(
             <View style={{backgroundColor: Colors.white, flex: 1}}>
-                <Text style={{backgroundColor: Colors.white}}>Home</Text>
+                 <Header
+                    backgroundColor={Colors.primaryBlue}
+                    placement="center"
+                    centerComponent={{ text: 'Inicio', style: { color: '#fff', fontSize:20 } }}
+                />
             </View>
         );
     }

@@ -112,7 +112,5 @@ const MainTabNavigator = createBottomTabNavigator({
       inactiveTintColor: Colors.grey,
     },
 });
-
-
   
 export default createAppContainer(MainTabNavigator);
